@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EditContent.View"
+             xmlns:EditContent="clr-namespace:EditContent;assembly=EditContent"
+             xmlns:CustomControls="clr-namespace:CustomControls;assembly=CustomControls"
+             Title="Edit">
+    
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <EditContent:Commands x:Key="Commands" />
+      <EditContent:ViewModel x:Key="ViewModel" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="auto" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+
+    <CustomControls:CustomEditor Grid.Row="0" Grid.ColumnSpan="2"  BindingContext="{StaticResource ViewModel}" Text="{Binding Content.Value}" />
+
+    <Button Text="Cancel" Grid.Row="1" Grid.Column="0"
+            Command="{Binding Source={StaticResource Commands}, Path=Cancel}" />
+
+    <Button Text="Save" Grid.Row="1" Grid.Column="1"
+            Command="{Binding Source={StaticResource Commands}, Path=Save}"
+            CommandParameter="{Binding Source={StaticResource ViewModel}, Path=Content}" />
+    
+  </Grid>
+</ContentPage>

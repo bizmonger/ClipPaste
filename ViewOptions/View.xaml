@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:b="clr-namespace:Xamarin.Forms.Behaviors;assembly=Xamarin.Forms.Behaviors"
+             x:Class="ViewMenu.View"
+             x:Name="ContentPage"
+             Title="Menu"
+             xmlns:CustomControls="clr-namespace:CustomControls;assembly=CustomControls"
+             xmlns:ViewMenu="clr-namespace:ViewMenu;assembly=ViewMenu"
+             xmlns:Behaviors="clr-namespace:ViewMenu.Behaviors;assembly=ViewMenu"
+             xmlns:Converters="clr-namespace:Converters;assembly=ViewMenu">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ViewMenu:Commands x:Key="Commands" />
+            <ViewMenu:ViewModel x:Key="ViewModel" />
+
+            <Converters:IsInstanceToBoolConverter x:Key="IsInstanceToBoolConverter" />
+
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="LayoutOptions.Center" />
+                <Setter Property="VerticalOptions" Value="LayoutOptions.Center" />
+                <Setter Property="FontSize" Value="48" />
+                <Setter Property="FontAttributes" Value="Bold, Italic" />
+                <Setter Property="Opacity" Value=".5" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Text" Value="Copied" />
+                <Setter Property="IsVisible" Value="False" />
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <CustomControls:ReadOnlyEditor x:Name="textBox1" BindingContext="{StaticResource ViewModel}" Text="{Binding Path=Content1.Value}" Grid.Row="0" Grid.Column="0" />
+
+        <Label x:Name="label1" Grid.Row="0" Grid.Column="0">
+            <Label.Behaviors>
+                <Behaviors:LabelDisplayBehavior />
+            </Label.Behaviors>
+        </Label>
+
+        <CustomControls:ReadOnlyEditor x:Name="textBox2" BindingContext="{StaticResource ViewModel}" Text="{Binding Path=Content2.Value}" Grid.Row="0" Grid.Column="1" />
+
+        <Label x:Name="label2" Grid.Row="0" Grid.Column="1">
+            <Label.Behaviors>
+                <Behaviors:LabelDisplayBehavior />
+            </Label.Behaviors>
+        </Label>
+
+        <CustomControls:ReadOnlyEditor x:Name="textBox3" BindingContext="{StaticResource ViewModel}" Text="{Binding Path=Content3.Value}" Grid.Row="1" Grid.Column="0" />
+
+        <Label x:Name="label3" Grid.Row="1" Grid.Column="0">
+            <Label.Behaviors>
+                <Behaviors:LabelDisplayBehavior />
+            </Label.Behaviors>
+        </Label>
+
+        <CustomControls:ReadOnlyEditor x:Name="textBox4" BindingContext="{StaticResource ViewModel}" Text="{Binding Path=Content4.Value}" Grid.Row="1" Grid.Column="1" />
+
+        <Label x:Name="label4" Grid.Row="1" Grid.Column="1">
+            <Label.Behaviors>
+                <Behaviors:LabelDisplayBehavior />
+            </Label.Behaviors>
+        </Label>
+
+        <Button Text="Edit" Grid.Row="2" Grid.ColumnSpan="2"
+            Command="{Binding Source={StaticResource Commands}, Path=Edit}"
+            IsEnabled="{Binding Source={StaticResource ViewModel}, Path=SelectedContent, Converter={StaticResource IsInstanceToBoolConverter}}"
+            CommandParameter="{Binding Source={StaticResource ViewModel}, Path=SelectedContent}"
+            />
+    </Grid>
+</ContentPage>
