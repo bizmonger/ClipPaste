@@ -4,7 +4,7 @@
              x:Class="EditContent.View"
              xmlns:EditContent="clr-namespace:EditContent;assembly=EditContent"
              xmlns:CustomControls="clr-namespace:CustomControls;assembly=CustomControls"
-             Title="Edit">
+             Title="Edit Clip">
     
   <ContentPage.Resources>
     <ResourceDictionary>

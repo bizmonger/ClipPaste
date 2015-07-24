@@ -4,7 +4,7 @@
              xmlns:b="clr-namespace:Xamarin.Forms.Behaviors;assembly=Xamarin.Forms.Behaviors"
              x:Class="ViewMenu.View"
              x:Name="ContentPage"
-             Title="Menu"
+             Title="Clips"
              xmlns:CustomControls="clr-namespace:CustomControls;assembly=CustomControls"
              xmlns:ViewMenu="clr-namespace:ViewMenu;assembly=ViewMenu"
              xmlns:Behaviors="clr-namespace:ViewMenu.Behaviors;assembly=ViewMenu"
