@@ -1,20 +1,11 @@
-﻿using SQLite;
-using System;
-using System.Linq;
+﻿using System.Linq;
 using DataAccessMediator;
-using Xamarin.Forms;
 using Entities;
-using Bizmonger.Patterns;
 
 namespace Bizmonger
 {
-    public class Repository : IRepository
+    public partial class Repository : IRepository
     {
-        #region Members
-        MessageBus _messagebus = MessageBus.Instance;
-        SQLiteConnection _databaseConnection = null;
-        #endregion
-
         public Repository()
         {
             _messagebus.Subscribe(Messages.REQUEST_REPOSITORY, OnRequestRepository);
@@ -42,29 +33,5 @@ namespace Bizmonger
                 _databaseConnection.Insert(content);
             }
         }
-
-        #region Helpers
-        private void InitializeDatabase()
-        {
-            _databaseConnection = DependencyService.Get<IDatabase>().Connect();
-
-            var tableExists = DependencyService.Get<IDatabase>().TableExists(_databaseConnection, "Content");
-
-            if (!tableExists)
-            {
-                _databaseConnection.CreateTable<Content>();
-            }
-        }
-
-        private void OnRequestRepository(object obj)
-        {
-            var dataAccessType = (DataAccessType)obj;
-
-            if (dataAccessType == DataAccessType.Integration)
-            {
-                _messagebus.Publish(Messages.REPOSITORY_RESPONSE, this);
-            }
-        }
-        #endregion
     }
 }
