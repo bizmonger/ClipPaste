@@ -1,4 +1,5 @@
 ﻿using Bizmonger.Patterns;
+using Entities;
 using Xamarin.Forms;
 
 namespace ViewMenu.Behaviors

@@ -13,9 +13,9 @@ namespace ViewMenu
 
         public Commands()
         {
-            Edit = new DelegateCommand(obj =>_messagebus.Publish(Messages.REQUEST_EDIT, obj as Content));
+            Copy = new DelegateCommand(obj => { _messagebus.Publish(Messages.REQUEST_SET_CLIPBOARD, (obj as Content)?.Value); });
         }
 
-        public ICommand Edit { get; private set; }
+        public ICommand Copy { get; private set; }
     }
 }

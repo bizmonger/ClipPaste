@@ -76,8 +76,8 @@
             </Label.Behaviors>
         </Label>
 
-        <Button Text="Edit" Grid.Row="2" Grid.ColumnSpan="2"
-            Command="{Binding Source={StaticResource Commands}, Path=Edit}"
+        <Button Text="Copy" Grid.Row="2" Grid.ColumnSpan="2"
+            Command="{Binding Source={StaticResource Commands}, Path=Copy}"
             IsEnabled="{Binding Source={StaticResource ViewModel}, Path=SelectedContent, Converter={StaticResource IsInstanceToBoolConverter}}"
             CommandParameter="{Binding Source={StaticResource ViewModel}, Path=SelectedContent}"
             />

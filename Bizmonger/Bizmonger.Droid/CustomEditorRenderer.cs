@@ -18,6 +18,7 @@ namespace Bizmonger.Droid
             {
                 this.Control.SetTextColor(global::Android.Graphics.Color.Black);
                 this.Control.SetBackgroundColor(global::Android.Graphics.Color.LightYellow);
+                this.Control.SetPadding(30, 5, 30, 5);
             }
         }
     }
