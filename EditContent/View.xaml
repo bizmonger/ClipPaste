@@ -21,15 +21,11 @@
 
     <Grid.ColumnDefinitions>
       <ColumnDefinition />
-      <ColumnDefinition />
     </Grid.ColumnDefinitions>
 
-    <CustomControls:CustomEditor Grid.Row="0" Grid.ColumnSpan="2"  BindingContext="{StaticResource ViewModel}" Text="{Binding Content.Value}" />
+    <CustomControls:CustomEditor Grid.Row="0" Grid.Column="0"  BindingContext="{StaticResource ViewModel}" Text="{Binding Content.Value}" />
 
-    <Button Text="Cancel" Grid.Row="1" Grid.Column="0"
-            Command="{Binding Source={StaticResource Commands}, Path=Cancel}" />
-
-    <Button Text="Save" Grid.Row="1" Grid.Column="1"
+    <Button Text="Save" Grid.Row="1" Grid.Column="0"
             Command="{Binding Source={StaticResource Commands}, Path=Save}"
             CommandParameter="{Binding Source={StaticResource ViewModel}, Path=Content}" />
     

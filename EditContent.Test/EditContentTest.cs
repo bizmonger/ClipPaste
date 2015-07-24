@@ -44,25 +44,6 @@ namespace EditContent.Test
         }
 
         [TestMethod]
-        public void cancel_edit()
-        {
-            // Setup
-            var content = new Content() { Id = SOME_ID, Value = SOME_SHORT_TEXT };
-            var viewModel = new ViewModel() { Content = content };
-            viewModel.PreviousContent = SOME_SHORT_TEXT;
-
-            // new MockRepository()
-            var cancel = new Commands().Cancel;
-
-            // Test
-            cancel.Execute(viewModel.PreviousContent);
-
-            // Verify
-            var noChangesMade = viewModel.Content.Value == viewModel.PreviousContent;
-            Assert.IsTrue(noChangesMade);
-        }
-
-        [TestMethod]
         public void save_edit()
         {
             // Setup

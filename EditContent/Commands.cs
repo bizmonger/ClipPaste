@@ -12,11 +12,9 @@ namespace EditContent
 
         public Commands()
         {
-            Cancel = new DelegateCommand(obj => _messagebus.Publish(Messages.REQUEST_PREVIOUS_VIEW, obj));
             Save = new DelegateCommand(OnSave);
         }
         
-        public ICommand Cancel { get; private set; }
         public ICommand Save { get; private set; }
     }
 }
