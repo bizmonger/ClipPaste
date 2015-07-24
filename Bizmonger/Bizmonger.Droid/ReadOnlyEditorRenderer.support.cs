@@ -1,11 +1,14 @@
 using Android.Content;
 using Entities;
 using Xamarin.Forms;
+using Bizmonger.Patterns;
 
 namespace Bizmonger.Droid
 {
     public partial class ReadOnlyEditorRenderer
     {
+        MessageBus _messagebus = MessageBus.Instance;
+
         private void ResponseToFocusChanged(object sender, FocusChangeEventArgs e)
         {
             if (e.HasFocus)

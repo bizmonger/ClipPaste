@@ -2,17 +2,12 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Bizmonger.Droid;
 using CustomControls;
-using Bizmonger.Patterns;
 
 [assembly: ExportRenderer(typeof(ReadOnlyEditor), typeof(ReadOnlyEditorRenderer))]
 namespace Bizmonger.Droid
 {
     public partial class ReadOnlyEditorRenderer : EditorRenderer
     {
-        #region Members
-        MessageBus _messagebus = MessageBus.Instance;
-        #endregion
-
         public ReadOnlyEditorRenderer()
         {
             PromiseClipboardRequestResponse();
