@@ -19,6 +19,7 @@ namespace ViewMenu
             _messagebus.Subscribe(Messages.REQUEST_SET_CLIPBOARD, obj => CopyMade = true);
             _messagebus.Subscribe(Messages.CONTENT_SELECTED, OnContentSelected);
             _messagebus.Subscribe(Messages.REQUEST_LOAD_CONTENT, OnLoadContent);
+            _messagebus.Subscribe(Messages.REQUEST_CONTENT, OnContentRequested);
         }
 
         Content _content1 = null;

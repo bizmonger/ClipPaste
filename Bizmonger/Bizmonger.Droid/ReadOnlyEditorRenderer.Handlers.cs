@@ -32,5 +32,37 @@ namespace Bizmonger.Droid
                 clipboardManager.PrimaryClip = clip;
             }
         }
+
+        private void PromiseResponseToClipboardRequest()
+        {
+            _messagebus.SubscribeFirstPublication(Messages.REQUEST_SET_CLIPBOARD, OnClipboardSet);
+        }
+
+        private void RequestContent()
+        {
+            this.Control.LongClick += (se, ev) =>
+                _messagebus.Publish(Messages.REQUEST_CONTENT, this.Control.Text);
+        }
+
+        private void PromiseResponseToContent()
+        {
+            _messagebus.Subscribe(Messages.REQUEST_CONTENT_RESPONSE, obj =>
+                _messagebus.Publish(Messages.REQUEST_EDIT, obj));
+        }
+
+        private void SetPresentation()
+        {
+            this.Control.SetTextColor(global::Android.Graphics.Color.Black);
+            this.Control.SetBackgroundColor(global::Android.Graphics.Color.LightGray);
+            this.Control.InputType = Android.Text.InputTypes.Null;
+            this.Control.SetTextSize(Android.Util.ComplexUnitType.Pt, 6);
+            this.Control.LongClickable = true;
+            this.Control.SetPadding(5, 5, 5, 5);
+        }
+
+        private void PromiseResponseToFocus()
+        {
+            this.Control.FocusChange += ResponseToFocusChanged;
+        }
     }
 }

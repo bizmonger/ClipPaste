@@ -22,11 +22,25 @@ namespace ViewMenu
             Content4 = dbContent4 != null ? dbContent4 : new Content() { Id = 4, Value = "CopyMade & paste me *4*" };
         }
 
-        private void OnContentSelected(object obj)
+        public void OnContentSelected(object obj)
+        {
+            var content = GetContent(obj);
+            SelectedContent = content;
+        }
+        
+        private void OnContentRequested(object obj)
+        {
+            var text = obj as string;
+            var content = GetContent(obj);
+            _messagebus.Publish(Messages.REQUEST_CONTENT_RESPONSE, content);
+        }
+
+        private Content GetContent(object obj)
         {
             var text = obj as string;
             var contentList = new List<Content>() { Content1, Content2, Content3, Content4 };
-            SelectedContent = contentList.Where(c => c.Value == text).FirstOrDefault();
+            var content = contentList.Where(c => c.Value == text).FirstOrDefault();
+            return content;
         }
     }
 }
