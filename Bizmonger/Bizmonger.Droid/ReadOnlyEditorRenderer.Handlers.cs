@@ -1,4 +1,5 @@
 using Android.Content;
+using Entities;
 using Xamarin.Forms;
 
 namespace Bizmonger.Droid
@@ -33,7 +34,7 @@ namespace Bizmonger.Droid
             }
         }
 
-        private void PromiseResponseToClipboardRequest()
+        private void PromiseClipboardRequestResponse()
         {
             _messagebus.SubscribeFirstPublication(Messages.REQUEST_SET_CLIPBOARD, OnClipboardSet);
         }
@@ -44,10 +45,17 @@ namespace Bizmonger.Droid
                 _messagebus.Publish(Messages.REQUEST_CONTENT, this.Control.Text);
         }
 
-        private void PromiseResponseToContent()
+        private void PromiseContentResponse()
         {
             _messagebus.Subscribe(Messages.REQUEST_CONTENT_RESPONSE, obj =>
-                _messagebus.Publish(Messages.REQUEST_EDIT, obj));
+                {
+                    var content = obj as Content;
+
+                    if (content.Value == this.Control.Text)
+                    {
+                        _messagebus.Publish(Messages.REQUEST_EDIT, obj);
+                    }
+                });
         }
 
         private void SetPresentation()

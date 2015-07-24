@@ -145,6 +145,10 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Entities\Entities.csproj">
+      <Project>{ef12dab0-5bad-440a-bd94-ba0fd4e900b2}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Renderers\CustomControls.csproj">
       <Project>{f44f2f6b-20e0-4225-b655-c170e2cc30d5}</Project>
       <Name>CustomControls</Name>

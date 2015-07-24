@@ -15,7 +15,7 @@ namespace Bizmonger.Droid
 
         public ReadOnlyEditorRenderer()
         {
-            PromiseResponseToClipboardRequest();
+            PromiseClipboardRequestResponse();
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
@@ -24,7 +24,7 @@ namespace Bizmonger.Droid
 
             if (this.Control != null)
             {
-                PromiseResponseToContent();
+                PromiseContentResponse();
                 RequestContent();
 
                 PromiseResponseToFocus();
