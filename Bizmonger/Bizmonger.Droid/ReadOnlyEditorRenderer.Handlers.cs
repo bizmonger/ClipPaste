@@ -23,7 +23,7 @@ namespace Bizmonger.Droid
             var clipboardData = obj as string;
 
             this.Control.SetBackgroundColor(this.Control.Text == clipboardData ?
-                global::Android.Graphics.Color.LightGreen : global::Android.Graphics.Color.White);
+                global::Android.Graphics.Color.LightGreen : global::Android.Graphics.Color.LightGray);
 
             if (this.Control.Text == clipboardData)
             {
