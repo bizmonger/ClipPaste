@@ -1,19 +1,10 @@
-﻿using Bizmonger.Patterns;
-using Core;
-using DataAccessMediator;
+﻿using Core;
 using Entities;
-using System.Collections.Generic;
-using System.Linq;
-using System;
 
 namespace ViewMenu
 {
     public partial class ViewModel : ViewModelBase
     {
-        #region Members
-        MessageBus _messagebus = MessageBus.Instance;
-        #endregion
-
         public ViewModel()
         {
             _messagebus.Subscribe(Messages.REQUEST_SET_CLIPBOARD, obj => CopyMade = true);

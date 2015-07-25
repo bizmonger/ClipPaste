@@ -1,4 +1,5 @@
-﻿using DataAccessMediator;
+﻿using Bizmonger.Patterns;
+using DataAccessMediator;
 using Entities;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,8 @@ namespace ViewMenu
 {
     public partial class ViewModel
     {
+        MessageBus _messagebus = MessageBus.Instance;
+
         public void OnContentSelected(object obj)
         {
             var content = GetContent(obj);
