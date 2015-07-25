@@ -3,16 +3,12 @@ using Bizmonger.Droid;
 using System.IO;
 using SQLite;
 using System.Linq;
-using System;
 
 [assembly: Dependency(typeof(Database_Android))]
 namespace Bizmonger.Droid
 {
-    // ...
     public class Database_Android : IDatabase
     {
-        public Database_Android() { }
-
         public SQLiteConnection Connect()
         {
             var fileName = "Clipboard_SQLite.db3";

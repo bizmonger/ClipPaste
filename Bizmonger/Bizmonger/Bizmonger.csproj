@@ -39,7 +39,9 @@
     <Compile Include="IDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
-    <Compile Include="Repository.support.cs" />
+    <Compile Include="Repository.support.cs">
+      <DependentUpon>Repository.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Bizmonger.Patterns">

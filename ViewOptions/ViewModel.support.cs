@@ -7,6 +7,12 @@ namespace ViewMenu
 {
     public partial class ViewModel
     {
+        public void OnContentSelected(object obj)
+        {
+            var content = GetContent(obj);
+            SelectedContent = content;
+        }
+
         private void OnLoadContent(object obj)
         {
             var repository = obj as IRepository;
@@ -16,16 +22,10 @@ namespace ViewMenu
             var dbContent3 = repository.Get(3);
             var dbContent4 = repository.Get(4);
 
-            Content1 = dbContent1 != null ? dbContent1 : new Content() { Id = 1, Value = "CopyMade & paste me *1*" };
-            Content2 = dbContent2 != null ? dbContent2 : new Content() { Id = 2, Value = "CopyMade & paste me *2*" };
-            Content3 = dbContent3 != null ? dbContent3 : new Content() { Id = 3, Value = "CopyMade & paste me *3*" };
-            Content4 = dbContent4 != null ? dbContent4 : new Content() { Id = 4, Value = "CopyMade & paste me *4*" };
-        }
-
-        public void OnContentSelected(object obj)
-        {
-            var content = GetContent(obj);
-            SelectedContent = content;
+            Content1 = dbContent1 != null ? dbContent1 : new Content() { Id = 1, Value = "Copy & paste me (1)" };
+            Content2 = dbContent2 != null ? dbContent2 : new Content() { Id = 2, Value = "Copy & paste me (2)" };
+            Content3 = dbContent3 != null ? dbContent3 : new Content() { Id = 3, Value = "Copy & paste me (3)" };
+            Content4 = dbContent4 != null ? dbContent4 : new Content() { Id = 4, Value = "Copy & paste me (4)" };
         }
         
         private void OnContentRequested(object obj)

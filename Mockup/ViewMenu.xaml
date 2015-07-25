@@ -91,7 +91,7 @@
         <TextBox x:Name="TextBox3" Text="{Binding Content3}" Grid.Row="1" Grid.Column="0" />
         <TextBlock Grid.Row="1" Grid.Column="0" Tag="{Binding ElementName=TextBox3, Path=Text}" />
 
-        <TextBox x:Name="TextBox4" Text="{Binding Content4}" Grid.Row="1" Grid.Column="1" />
+        <TextBox x:Name="TextBox4" Text="{Binding Content4}" Grid.Row="1" Grid.Column="1"  />
         <TextBlock Grid.Row="1" Grid.Column="1" Tag="{Binding ElementName=TextBox4, Path=Text}" />
 
         <Button Content="Edit" Grid.Row="2" Grid.Column="0" 

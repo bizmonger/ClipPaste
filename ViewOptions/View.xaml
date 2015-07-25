@@ -46,7 +46,7 @@
 
         <CustomControls:ReadOnlyEditor x:Name="textBox1" BindingContext="{StaticResource ViewModel}" Text="{Binding Path=Content1.Value}" Grid.Row="0" Grid.Column="0" />
 
-        <Label x:Name="label1" Grid.Row="0" Grid.Column="0">
+        <Label x:Name="label1" Grid.Row="0" Grid.Column="0" >
             <Label.Behaviors>
                 <Behaviors:LabelDisplayBehavior />
             </Label.Behaviors>

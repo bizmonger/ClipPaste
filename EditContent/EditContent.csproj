@@ -41,14 +41,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands.cs" />
+    <Compile Include="Commands.cs">
+      <DependentUpon>ViewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Messages.cs" />
     <Compile Include="View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel.support.cs" />
+    <Compile Include="ViewModel.support.cs">
+      <DependentUpon>ViewModel.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Bizmonger.Patterns">
