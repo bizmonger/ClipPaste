@@ -48,11 +48,11 @@
     <Compile Include="Behaviors\LabelDisplayBehavior.support.cs">
       <DependentUpon>LabelDisplayBehavior.cs</DependentUpon>
     </Compile>
-    <Compile Include="Commands.cs">
+    <Compile Include="ViewModel.commands.cs">
       <DependentUpon>ViewModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Commands.support.cs">
-      <DependentUpon>Commands.cs</DependentUpon>
+    <Compile Include="ViewModel.commands.support.cs">
+      <DependentUpon>ViewModel.commands.cs</DependentUpon>
     </Compile>
     <Compile Include="Converters\IsInstanceToBoolConverter.cs" />
     <Compile Include="Messages.cs" />
