@@ -1,19 +1,14 @@
-﻿using Bizmonger.Patterns;
-using Core;
+﻿using Core;
 using Entities;
 
 namespace EditContent
 {
-    public class ViewModel : ViewModelBase
+    public partial class ViewModel : ViewModelBase
     {
-        #region Members
-        MessageBus _messageBus = MessageBus.Instance;
-        #endregion
-
         public ViewModel()
         {
-            _messageBus.Subscribe(Messages.REQUEST_REFRESH_CONTENT, obj => { Content = obj as Content; });
-            _messageBus.Subscribe(Messages.REQUEST_LOAD_EDITOR, obj => { Content = obj as Content; });
+            _messagebus.Subscribe(Messages.REQUEST_REFRESH_CONTENT, obj => { Content = obj as Content; });
+            _messagebus.Subscribe(Messages.REQUEST_LOAD_EDITOR, obj => { Content = obj as Content; });
         }
 
         public string PreviousContent { get; set; }

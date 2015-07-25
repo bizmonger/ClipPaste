@@ -6,10 +6,6 @@ namespace EditContent
 {
     public partial class Commands : ViewModelBase
     {
-        #region Members
-        MessageBus _messagebus = MessageBus.Instance;
-        #endregion
-
         public Commands()
         {
             Save = new DelegateCommand(OnSave);

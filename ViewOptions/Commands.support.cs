@@ -1,8 +1,8 @@
 ﻿using Bizmonger.Patterns;
 
-namespace EditContent
+namespace ViewMenu
 {
-    public partial class ViewModel
+    public partial class Commands
     {
         MessageBus _messagebus = MessageBus.Instance;
     }

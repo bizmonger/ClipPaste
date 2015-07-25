@@ -51,6 +51,9 @@
     <Compile Include="Commands.cs">
       <DependentUpon>ViewModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Commands.support.cs">
+      <DependentUpon>Commands.cs</DependentUpon>
+    </Compile>
     <Compile Include="Converters\IsInstanceToBoolConverter.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="Properties\Annotations.cs" />
