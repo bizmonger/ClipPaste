@@ -48,7 +48,7 @@ namespace ViewMenu.Test
         public void select_option_with_content()
         {
             // Setup
-            var content = new Content() { Id = SOME_ID, Value = SOME_SHORT_TEXT };
+            var content = new Content() { Id = SOME_INTEGER_ID, Value = SOME_TEXT };
             var viewModel = new ViewModel();
 
             // Test
@@ -56,7 +56,7 @@ namespace ViewMenu.Test
             viewModel.SelectedContent = viewModel.Content1;
 
             // Verify
-            Assert.IsTrue(viewModel.SelectedContent.Value == SOME_SHORT_TEXT);
+            Assert.IsTrue(viewModel.SelectedContent.Value == SOME_TEXT);
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace ViewMenu.Test
         #region Helpers
         private static void SelectSomeContent(ViewModel viewModel)
         {
-            var content = new Content() { Id = SOME_ID, Value = SOME_SHORT_TEXT };
+            var content = new Content() { Id = SOME_INTEGER_ID, Value = SOME_TEXT };
             viewModel.Content1 = content;
             viewModel.SelectedContent = viewModel.Content1;
         }

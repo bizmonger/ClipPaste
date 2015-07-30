@@ -40,11 +40,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Bizmonger.TestAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bizmonger.TestAPI.1.0.2\lib\net45\Bizmonger.TestAPI.dll</HintPath>
+      <HintPath>..\packages\Bizmonger.TestAPI.1.0.3\lib\net45\Bizmonger.TestAPI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Login.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bizmonger.TestAPI.1.0.2\lib\net45\Login.Core.dll</HintPath>
+      <HintPath>..\packages\Bizmonger.TestAPI.1.0.3\lib\net45\Login.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
