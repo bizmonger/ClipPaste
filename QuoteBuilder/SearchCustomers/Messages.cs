@@ -1,6 +1,0 @@
-﻿namespace SearchCustomers
-{
-    class Messages
-    {
-    }
-}

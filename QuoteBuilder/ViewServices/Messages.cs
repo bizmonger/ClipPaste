@@ -1,6 +1,0 @@
-﻿namespace ViewServices
-{
-    class Messages
-    {
-    }
-}
