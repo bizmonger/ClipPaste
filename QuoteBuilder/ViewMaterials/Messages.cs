@@ -1,0 +1,6 @@
+﻿namespace ViewMaterials
+{
+    class Messages
+    {
+    }
+}
