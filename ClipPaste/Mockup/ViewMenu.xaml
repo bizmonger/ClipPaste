@@ -1,0 +1,107 @@
+﻿<Window x:Class="Mockup.ViewMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ViewMenu="clr-namespace:ViewMenu;assembly=ViewMenu"
+        xmlns:converters="clr-namespace:Converters"
+        mc:Ignorable="d"
+        x:Name="Window"
+        Title="Mock" Height="500" Width="525" Background="Black">
+    <Window.DataContext>
+        <ViewMenu:ViewModel />
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <ViewMenu:Commands x:Key="Commands" />
+        <converters:IsInstanceToBoolConverter x:Key="IsInstanceToBoolConverter" />
+        <converters:TextboxBorderBrushConverter x:Key="TextboxBorderBrushConverter" />
+        <converters:TextboxBackgroundBrushConverter x:Key="TextboxBackgroundBrushConverter" />
+        <converters:TextConverter x:Key="TextConverter" />
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="Opacity" Value=".2" />
+            <Setter Property="Text">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource TextConverter}">
+                        <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                        <Binding ElementName="Window" Path="DataContext.SelectedContent" />
+                        <Binding ElementName="Window" Path="DataContext.CopyMade" />
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource TextboxBorderBrushConverter}">
+                        <Binding RelativeSource="{RelativeSource Self}" Path="Text" />
+                        <Binding ElementName="Window" Path="DataContext.SelectedContent" />
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource TextboxBackgroundBrushConverter}">
+                        <Binding RelativeSource="{RelativeSource Self}" Path="Text" />
+                        <Binding ElementName="Window" Path="DataContext.SelectedContent" />
+                        <Binding ElementName="Window" Path="DataContext.CopyMade" />
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="AcceptsReturn" Value="True" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="Padding" Value="5" />
+            <EventSetter Event="Loaded" Handler="OnTextBoxLoaded" />
+        </Style>
+        
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="25,10" />
+            <Setter Property="Height" Value="60" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="TextBox1" Text="{Binding Content1}" Grid.Row="0" Grid.Column="0" />
+        <TextBlock Grid.Row="0" Grid.Column="0" Tag="{Binding ElementName=TextBox1, Path=Text}" />
+
+        <TextBox x:Name="TextBox2" Text="{Binding Content2}" Grid.Row="0" Grid.Column="1" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Tag="{Binding ElementName=TextBox2, Path=Text}" />
+
+        <TextBox x:Name="TextBox3" Text="{Binding Content3}" Grid.Row="1" Grid.Column="0" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Tag="{Binding ElementName=TextBox3, Path=Text}" />
+
+        <TextBox x:Name="TextBox4" Text="{Binding Content4}" Grid.Row="1" Grid.Column="1"  />
+        <TextBlock Grid.Row="1" Grid.Column="1" Tag="{Binding ElementName=TextBox4, Path=Text}" />
+
+        <Button Content="Edit" Grid.Row="2" Grid.Column="0" 
+                DataContext="{StaticResource Commands}" Command="{Binding Edit}" 
+                IsEnabled="{Binding ElementName=Window, Path=DataContext.SelectedContent, Converter={StaticResource IsInstanceToBoolConverter}}" 
+                CommandParameter="{Binding ElementName=Window, Path=DataContext.SelectedContent}" />
+
+        <Button Content="Copy" Grid.Row="2" Grid.Column="1" 
+                DataContext="{StaticResource Commands}" Command="{Binding CopyToClipboard}" 
+                IsEnabled="{Binding ElementName=Window, Path=DataContext.SelectedContent, Converter={StaticResource IsInstanceToBoolConverter}}" 
+                CommandParameter="{Binding ElementName=Window, Path=DataContext.SelectedContent}" />
+    </Grid>
+</Window>
