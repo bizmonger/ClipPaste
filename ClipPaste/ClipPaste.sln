@@ -36,7 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewMenu.Integration.Test", "ViewMenu.Integration.Test\ViewMenu.Integration.Test.csproj", "{4AA7063A-14FB-4281-9869-153493A989F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessMediator", "DataAccessMediator\DataAccessMediator.csproj", "{FF21F056-CDD5-42F6-9DB2-DE3028F62AE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMediation", "DataAccessMediator\DataMediation.csproj", "{FF21F056-CDD5-42F6-9DB2-DE3028F62AE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{EF12DAB0-5BAD-440A-BD94-BA0FD4E900B2}"
 EndProject

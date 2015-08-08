@@ -1,5 +1,4 @@
 ﻿using Bizmonger.Patterns;
-using DataAccessMediator;
 using Entities;
 using Xamarin.Forms;
 
@@ -7,9 +6,7 @@ namespace Bizmonger
 {
     public class App : Application
     {
-        #region Members
         MessageBus _messagebus = MessageBus.Instance;
-        #endregion
 
         public App()
         {
@@ -17,7 +14,7 @@ namespace Bizmonger
             var homePage = new ViewMenu.View();
             this.MainPage = new NavigationPage(homePage);
 
-            InitializeData();
+            ActivateRepositories();
 
             _messagebus.Subscribe(ViewMenu.Messages.REQUEST_EDIT,
                 async obj => { await MainPage.Navigation.PushAsync(new EditContent.View(obj as Content), animated: true); });
@@ -41,11 +38,9 @@ namespace Bizmonger
             // Handle when your app resumes
         }
 
-        #region Helpers
-        private void InitializeData()
+        void ActivateRepositories()
         {
             new Repository();
         }
-        #endregion
     }
 }

@@ -11,7 +11,7 @@ namespace Bizmonger
         MessageBus _messagebus = MessageBus.Instance;
         SQLiteConnection _databaseConnection = null;
 
-        private void InitializeDatabase()
+        void InitializeDatabase()
         {
             _databaseConnection = DependencyService.Get<IDatabase>().Connect();
 
@@ -23,7 +23,7 @@ namespace Bizmonger
             }
         }
 
-        private void OnRequestRepository(object obj)
+        void OnRequestRepository(object obj)
         {
             var dataAccessType = (DataAccessType)obj;
 

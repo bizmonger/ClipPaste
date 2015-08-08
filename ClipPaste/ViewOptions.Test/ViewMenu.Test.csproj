@@ -84,9 +84,9 @@
       <Project>{91c8d548-7d32-4804-a41b-f134f03b13fd}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccessMediator\DataAccessMediator.csproj">
+    <ProjectReference Include="..\DataAccessMediator\DataMediation.csproj">
       <Project>{ff21f056-cdd5-42f6-9db2-de3028f62ae8}</Project>
-      <Name>DataAccessMediator</Name>
+      <Name>DataMediation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{ef12dab0-5bad-440a-bd94-ba0fd4e900b2}</Project>
