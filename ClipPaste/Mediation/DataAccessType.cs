@@ -1,4 +1,4 @@
-﻿namespace DataAccessMediator
+﻿namespace Mediation
 {
     public enum DataAccessType
     {

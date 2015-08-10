@@ -1,6 +1,6 @@
 ﻿using Bizmonger.Patterns;
 using CustomControls;
-using DataAccessMediator;
+using Mediation;
 using System.Collections.Generic;
 using Xamarin.Forms;
 

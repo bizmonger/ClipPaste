@@ -8,8 +8,6 @@ namespace Bizmonger.Droid
 {
     public class CustomEditorRenderer : EditorRenderer
     {
-        public CustomEditorRenderer() { }
-
         protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
         {
             base.OnElementChanged(e);

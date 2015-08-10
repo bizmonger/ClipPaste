@@ -1,4 +1,5 @@
 ﻿using Bizmonger.Patterns;
+using Mediation;
 using Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static TestAPI.Gimme;
@@ -74,7 +75,7 @@ namespace ViewMenu.Test
         }
 
         #region Helpers
-        private static void SelectSomeContent(ViewModel viewModel)
+        static void SelectSomeContent(ViewModel viewModel)
         {
             var content = new Content() { Id = SOME_INTEGER_ID, Value = SOME_TEXT };
             viewModel.Content1 = content;

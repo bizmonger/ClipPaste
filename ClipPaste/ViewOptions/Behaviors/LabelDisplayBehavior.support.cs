@@ -1,4 +1,5 @@
 ﻿using Bizmonger.Patterns;
+using Mediation;
 using Xamarin.Forms;
 
 namespace ViewMenu.Behaviors
@@ -8,7 +9,7 @@ namespace ViewMenu.Behaviors
         MessageBus _messageBus = MessageBus.Instance;
         Label _label = null;
 
-        private void OnClipboardSet(object obj)
+        void OnClipboardSet(object obj)
         {
             var clipboardData = obj as string;
 

@@ -1,4 +1,5 @@
 ﻿using Bizmonger.Patterns;
+using Mediation;
 using Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static TestAPI.Gimme;

@@ -1,5 +1,5 @@
 ﻿using Bizmonger.Patterns;
-using DataAccessMediator;
+using Mediation;
 using Entities;
 using SQLite;
 using Xamarin.Forms;

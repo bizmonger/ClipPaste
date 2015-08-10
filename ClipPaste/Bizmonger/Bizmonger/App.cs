@@ -1,4 +1,5 @@
 ﻿using Bizmonger.Patterns;
+using Mediation;
 using Entities;
 using Xamarin.Forms;
 
@@ -16,7 +17,7 @@ namespace Bizmonger
 
             ActivateRepositories();
 
-            _messagebus.Subscribe(ViewMenu.Messages.REQUEST_EDIT,
+            _messagebus.Subscribe(Messages.REQUEST_EDIT,
                 async obj => { await MainPage.Navigation.PushAsync(new EditContent.View(obj as Content), animated: true); });
 
             _messagebus.Subscribe("REQUEST_PREVIOUS_VIEW",

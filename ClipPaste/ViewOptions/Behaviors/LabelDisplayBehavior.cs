@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Mediation;
+using Xamarin.Forms;
 
 namespace ViewMenu.Behaviors
 {

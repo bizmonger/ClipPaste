@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using DataAccessMediator;
+using Mediation;
 using Entities;
 
 namespace Bizmonger

@@ -1,5 +1,5 @@
 ﻿using System;
-using DataAccessMediator;
+using Mediation;
 using Entities;
 using Bizmonger.Patterns;
 

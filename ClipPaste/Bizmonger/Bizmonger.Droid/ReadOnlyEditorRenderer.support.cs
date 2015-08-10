@@ -2,6 +2,7 @@ using Android.Content;
 using Entities;
 using Xamarin.Forms;
 using Bizmonger.Patterns;
+using Mediation;
 
 namespace Bizmonger.Droid
 {
@@ -9,7 +10,7 @@ namespace Bizmonger.Droid
     {
         MessageBus _messagebus = MessageBus.Instance;
 
-        private void ResponseToFocusChanged(object sender, FocusChangeEventArgs e)
+        void ResponseToFocusChanged(object sender, FocusChangeEventArgs e)
         {
             if (e.HasFocus)
             {
@@ -22,7 +23,7 @@ namespace Bizmonger.Droid
             }
         }
 
-        private void OnClipboardSet(object obj)
+        void OnClipboardSet(object obj)
         {
             var clipboardData = obj as string;
 
@@ -40,18 +41,18 @@ namespace Bizmonger.Droid
             }
         }
 
-        private void PromiseClipboardRequestResponse()
+        void PromiseClipboardRequestResponse()
         {
             _messagebus.Subscribe(Messages.REQUEST_SET_CLIPBOARD, OnClipboardSet);
         }
 
-        private void RequestContent()
+        void RequestContent()
         {
             this.Control.LongClick += (se, ev) =>
                 _messagebus.Publish(Messages.REQUEST_CONTENT, this.Control.Text);
         }
 
-        private void PromiseContentResponse()
+        void PromiseContentResponse()
         {
             _messagebus.Subscribe(Messages.REQUEST_CONTENT_RESPONSE, obj =>
                 {
@@ -64,7 +65,7 @@ namespace Bizmonger.Droid
                 });
         }
 
-        private void SetPresentation()
+        void SetPresentation()
         {
             this.Control.SetTextColor(global::Android.Graphics.Color.Black);
             this.Control.SetBackgroundColor(global::Android.Graphics.Color.LightGray);
@@ -74,7 +75,7 @@ namespace Bizmonger.Droid
             this.Control.SetPadding(5, 5, 5, 5);
         }
 
-        private void PromiseResponseToFocus()
+        void PromiseResponseToFocus()
         {
             this.Control.FocusChange += ResponseToFocusChanged;
         }

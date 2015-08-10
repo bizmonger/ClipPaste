@@ -20,9 +20,6 @@ namespace Bizmonger.Droid
             return connection;
         }
 
-        public bool TableExists(SQLiteConnection connection, string tableName)
-        {
-            return connection.GetTableInfo(tableName).Any();
-        }
+        public bool TableExists(SQLiteConnection connection, string tableName) => connection.GetTableInfo(tableName).Any();
     }
 }

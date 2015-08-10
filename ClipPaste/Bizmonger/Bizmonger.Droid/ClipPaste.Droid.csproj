@@ -120,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomEditorRenderer.cs" />
-    <Compile Include="Messages.cs" />
     <Compile Include="ReadOnlyEditorRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ReadOnlyEditorRenderer.support.cs">
@@ -147,6 +146,10 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Mediation\Mediation.csproj">
+      <Project>{ff21f056-cdd5-42f6-9db2-de3028f62ae8}</Project>
+      <Name>Mediation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Entities\Entities.csproj">
       <Project>{ef12dab0-5bad-440a-bd94-ba0fd4e900b2}</Project>
       <Name>Entities</Name>

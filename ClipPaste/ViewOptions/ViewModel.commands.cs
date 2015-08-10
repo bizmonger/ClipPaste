@@ -1,5 +1,6 @@
 ﻿using Bizmonger.Patterns;
 using Core;
+using Mediation;
 using Entities;
 using System.Windows.Input;
 

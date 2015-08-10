@@ -1,6 +1,6 @@
 ﻿using Entities;
 
-namespace DataAccessMediator
+namespace Mediation
 {
     public interface IRepository
     {
