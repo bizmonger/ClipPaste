@@ -34,7 +34,7 @@ namespace ViewMenu
             base.OnAppearing();
 
             MessageBus.Instance.Subscribe(Messages.REPOSITORY_RESPONSE, obj =>
-                    _messageBus.Publish(Messages.REQUEST_LOAD_CONTENT, obj as IRepository));
+                _messageBus.Publish(Messages.REQUEST_LOAD_CONTENT, obj as IRepository));
 
             _messageBus.Publish(Messages.REQUEST_REPOSITORY, DataAccessType.Integration);
         }

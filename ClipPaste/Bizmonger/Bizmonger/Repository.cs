@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using Mediation;
 using Entities;
+using Mediation;
 
 namespace Bizmonger
 {
@@ -13,7 +13,7 @@ namespace Bizmonger
 
             InitializeDatabase();
         }
-        
+
         public Content Get(int id)
         {
             var content = _databaseConnection.Table<Content>().FirstOrDefault(x => x.Id == id);
@@ -24,14 +24,8 @@ namespace Bizmonger
         {
             var existingContent = _databaseConnection.Table<Content>().FirstOrDefault(x => x.Id == content.Id);
 
-            if (existingContent != null)
-            {
-                _databaseConnection.Update(content);
-            }
-            else
-            {
-                _databaseConnection.Insert(content);
-            }
+            if (existingContent != null) _databaseConnection.Update(content);
+            else _databaseConnection.Insert(content);
         }
     }
 }

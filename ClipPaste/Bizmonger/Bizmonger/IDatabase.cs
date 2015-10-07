@@ -2,7 +2,7 @@
 
 namespace Bizmonger
 {
-    public interface IDatabase
+    public interface IDataConnection
     {
         SQLiteConnection Connect();
 

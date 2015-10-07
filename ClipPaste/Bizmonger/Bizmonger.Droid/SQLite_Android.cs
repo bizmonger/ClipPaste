@@ -7,7 +7,7 @@ using System.Linq;
 [assembly: Dependency(typeof(Database_Android))]
 namespace Bizmonger.Droid
 {
-    public class Database_Android : IDatabase
+    public class Database_Android : IDataConnection
     {
         public SQLiteConnection Connect()
         {

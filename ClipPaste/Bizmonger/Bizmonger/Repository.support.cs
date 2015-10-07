@@ -13,9 +13,9 @@ namespace Bizmonger
 
         void InitializeDatabase()
         {
-            _databaseConnection = DependencyService.Get<IDatabase>().Connect();
+            _databaseConnection = DependencyService.Get<IDataConnection>().Connect();
 
-            var tableExists = DependencyService.Get<IDatabase>().TableExists(_databaseConnection, "Content");
+            var tableExists = DependencyService.Get<IDataConnection>().TableExists(_databaseConnection, "Content");
 
             if (!tableExists)
             {
