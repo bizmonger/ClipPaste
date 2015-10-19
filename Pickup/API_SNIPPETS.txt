@@ -1,0 +1,40 @@
+keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ Android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+keytool -list -v -keystore "C:\Users\Bizmonger\AppData\Local\Xamarin\Mono for Android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+
+C:\Users\Bizmonger\AppData\Local\Xamarin\Mono for Android\debug.keystore
+
+C:\Users\Bizmonger>cd "C:\Program Files (x86)\Java\jdk1.7.0_55\bin"
+
+C:\Program Files (x86)\Java\jdk1.7.0_55\bin>keytool -list -v -keystore "C:\Users
+\Bizmonger\AppData\Local\Xamarin\Mono for Android\debug.keystore" -alias android
+debugkey -storepass android -keypass android
+Alias name: androiddebugkey
+Creation date: Jul 30, 2015
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Android Debug, O=Android, C=US
+Issuer: CN=Android Debug, O=Android, C=US
+Serial number: 2a16eafe
+Valid from: Thu Jul 30 07:52:19 EDT 2015 until: Sat Jul 22 07:52:19 EDT 2045
+Certificate fingerprints:
+         MD5:  7A:C7:14:04:8B:D8:75:91:A2:7B:93:30:67:38:93:D5
+         SHA1: E1:CA:74:54:FD:04:20:BD:05:14:3E:69:CB:29:F4:3D:2F:F4:73:1A
+         SHA256: 57:72:C9:52:6A:E1:E4:E0:A7:A6:15:DF:9B:E9:51:60:2F:9B:8D:FF:39:
+A5:21:12:8D:8F:54:41:B0:AE:84:A6
+         Signature algorithm name: SHA256withRSA
+         Version: 3
+
+Extensions:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 8F 07 1F 18 B1 97 1D 68   DA 5A 61 F4 C7 22 B9 68  .......h.Za..".h
+0010: 07 DB 83 D2                                        ....
+]
+]
+
+
+C:\Program Files (x86)\Java\jdk1.7.0_55\bin>
